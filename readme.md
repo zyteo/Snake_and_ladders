@@ -10,7 +10,7 @@ Rules of Game:
 The first player that reaches the highest space on the board, 100, wins the game.
 When you land at the bottom of a ladder, your piece would move up. Landing at the top of a ladder does nothing. When you land at the top of a snake, your piece would move down. Landing at the base of a snake does nothing.
 
-Note that a player will have to roll the exact number required to land their piece on 100th tile. So if the player rolls a higher number than needed to land exactly on 100, their piece does not move and remains there until their next turn.
+Note that a player will have to roll the exact number required to land their piece on the 100th tile. So if the player rolls a higher number than needed to land exactly on 100, their piece does not move and remains there until their next turn.
 
 Following the original game of Moksha-Patamu, there will be more snakes than ladders.
 In the original game, the squares of virtue were: faith (12), reliability (51), generosity (57), knowledge (76) and asceticism (78).

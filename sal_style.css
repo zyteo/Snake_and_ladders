@@ -1,0 +1,46 @@
+/* GA SEI 32 Project 1: Game */
+/* ZY, 10 Sept 2021 */
+
+body {
+    background-color: rgb(212, 173, 173);
+  }
+h2 {
+color: rgb(0, 17, 255);
+font-size: 20px;
+font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+#firstDiv {
+background-color: lightsalmon;
+}
+
+.rules {
+background-color: lightyellow;
+}
+
+.table {
+    font-family: arial, sans-serif;
+    border: 2px solid black;
+    width: 100%;
+    text-align: left;
+}
+
+.thead {
+    background-color: #04AA6D;
+    border: 1px solid #000000;
+    color: white;
+}
+.td {
+    background-color:rgba(185, 185, 185, 0.3);
+    border: 1px solid #000000;
+    text-align: center;
+}
+.ul {
+    background-color: rgb(145, 163, 79);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.orderlist {
+    background-color: rgb(99, 156, 118);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}

@@ -14,35 +14,50 @@ const ladderTilesResult = [4,11];
 let playerTile = 1;
 
 // FUNCTION Dice roll from 1 to 6
+// Function randomly generates and returns a number, randomDice, that has value 1-6.
 const diceRoll = () => {
     let randomDice = Math.ceil(Math.random() * 6);
     return randomDice;
 }
 
 // FUNCTION Move piece backward if land on snakes
+// Takes in a parameter (piece) that is part of the snakeTiles value
+// Finds that value in snakeTiles array, get the index, and input that index into snakeTilesResult.
+// Function returns a number, resultSnake, that the piece will move to.
 const moveBack = (piece) => {
-    return snakeTilesResult[piece];
+    let indexSnake = snakeTiles.indexOf(piece);
+    let resultSnake = snakeTilesResult[indexSnake];
+    return resultSnake;
 }
 
 // FUNCTION Move piece forward if land on ladder
+// Takes in a parameter (piece) that is part of the ladderTiles value
+// Finds that value in ladderTiles array, get the index, and input that index into ladderTilesResult.
+// Function returns a number, resultLadder, that the piece will move to.
 const moveForward = (piece) => {
-    return ladderTilesResult[piece];
+    let indexLadder = ladderTiles.indexOf(piece);
+    let resultLadder = ladderTilesResult[indexLadder];
+    return resultLadder;
 }
 
 // FUNCTION Move tile
 // Takes in corresponding player's tile number, and returns the resulting tile they land on.
 const moveTile = (whoseTile) => {
-    // if land on snaketile
-    if (whoseTile + diceRoll === snakeTiles){
-        return moveBack(whoseTile + diceRoll);
+    let tileAfterRoll = whoseTile + diceRoll();
+    // if land on snaketile, return value of tile player goes down to
+    if (snakeTiles.includes(tileAfterRoll)){
+        return moveBack(tileAfterRoll);
     }
-    // if land on laddertile
-    elseif (whoseTile + diceRoll === ladderTiles){
-        return moveForward(whoseTile + diceRoll);
+    // if land on laddertile, return value of tile player goes up to
+    else if (ladderTiles.includes(tileAfterRoll)){
+        return moveForward(tileAfterRoll);
     }
     // otherwise, land on normal tile
     else {
-        return whoseTile + diceRoll
+        return tileAfterRoll;
     }
 }
+
+// Maybe like after clicking roll...
+// playerTile = moveTile(playerTile);
 

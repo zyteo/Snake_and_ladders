@@ -61,3 +61,6 @@ const moveTile = (whoseTile) => {
 // Maybe like after clicking roll...
 // playerTile = moveTile(playerTile);
 
+// For the game to run,
+// while loop, for as long as no piece landed on 100 yet, run game
+

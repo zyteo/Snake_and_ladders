@@ -1,9 +1,10 @@
-/* GA SEI 32 Project 1: Game */
+/* GA SEI 32 Project 1: Game (Moksha Patamu) */
 /* ZY, 10 Sept 2021 */
 
 body {
     background-color: rgb(212, 173, 173);
   }
+
 h2 {
 color: rgb(0, 17, 255);
 font-size: 20px;
@@ -44,3 +45,14 @@ background-color: lightyellow;
     background-color: rgb(99, 156, 118);
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
+
+.square {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+
+/* .squareset {
+
+    display: inline-block;
+} */

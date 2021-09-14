@@ -6,6 +6,7 @@ technologies used, the approach taken, installation instructions, unsolved probl
 11 sept - created table to test out
 12 sept - created draw io file to draw out logic for game, added some js logic
 13 sept - created word file for pre proj planning
+14 sept - filled in the word file, added 10 tiles to test
 
 Plan: Moksha-Patamu (Snake and Ladders) - classic board game
 rules: https://www.ymimports.com/pages/how-to-play-snakes-and-ladders

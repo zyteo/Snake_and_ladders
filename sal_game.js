@@ -1,7 +1,7 @@
 // GA SEI-32 Project 1: Game
 // ZY, 10 Sept 2021
 
-
+// make mini game to test first. 20 tiles, 2 snakes, 2 ladders, 2 player pieces
 // Function that randomly generates RGB values - color each square randomly
 const randomColorRGB = () => {
     const red = Math.floor( Math.random() * 256 )
@@ -10,23 +10,36 @@ const randomColorRGB = () => {
     return `rgb(${red}, ${green}, ${blue})`
 }
 
-// Generate board
-// function to make a row with 8 squares, start with red
-const make10Squares = () => {
-    // create new div to add the squares inside
-    const $newdiv = $('<div>').addClass('squareset container');
-    // add the squares inside new div, different colors
-    for (let i=1; i <= 10; i++){
-        const $square = $('<div>').addClass('square').css('background-color', randomColorRGB());
-        $square.text(i).attr('id', i);
-        // append to main square div
-        $newdiv.append($square);
-    }
-    $('body').append($newdiv);
-    
-}
+// // Generate board
+// // function to make a row with 8 squares, start with red
+// const make10Squares = () => {
+//     // create new div to add the squares inside
+//     const $newdiv = $('<div>').addClass('squareset container');
+//     // add the squares inside new div, different colors
+//     for (let i=1; i <= 10; i++){
+//         const $square = $('<div>').addClass('square').css('background-color', randomColorRGB());
+//         $square.text(i).attr('id', i);
+//         // append to main square div
+//         $newdiv.append($square);
+//     }
+//     $('body').append($newdiv);
+// }
 
-make10Squares();
+// const make10Squares2 = () => {
+//     // create new div to add the squares inside
+//     const $newdiv = $('<div>').addClass('squareset container');
+//     // add the squares inside new div, different colors
+//     for (let i=20; i >= 11; i--){
+//         const $square = $('<div>').addClass('square').css('background-color', randomColorRGB());
+//         $square.text(i).attr('id', i);
+//         // append to main square div
+//         $newdiv.append($square);
+//     }
+//     $('body').append($newdiv);
+// }
+
+// make10Squares();
+// make10Squares2();
 
 // ARRAY of snakes, with resulting tiles that piece will move down to
 const snakeTiles = [15,7];
@@ -37,6 +50,14 @@ const ladderTiles = [3,8];
 // const ladderTiles = [12,51,57,76,78];
 const ladderTilesResult = [4,11];
 
+// ladder img
+$ladderImg = $('<img>').attr('src', 'https://freesvg.org/img/portablejim-Ladder-flat.png');
+$snakeImg = $('<img>').attr('src', 'http://www.clipartbest.com/cliparts/KTn/Lqk/KTnLqkaEc.png')
+// $('.squareset').append($snakeImg)
+$('.square:contains(17)')[0].append($snakeImg)
+
+// tile piece
+$('#3').addClass(circle)
 // VARIABLE storing player & computer's tile number
 let playerTile = 1;
 let computerTile = 1;

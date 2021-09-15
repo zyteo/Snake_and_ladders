@@ -47,9 +47,26 @@ background-color: lightyellow;
 }
 
 .square {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
+    /* inline block sets them horinzontally. flex vertical */
     display: inline-block;
+    align-items: center;
+    justify-content: center;
+    /* text color */
+    color: white;
+    text-shadow: 5px 5px 5px black;
+    border: 2px solid rgb(73, 66, 66);
+    
+}
+
+.circle {
+
+        background: red;
+        border-radius: 50%;
+        
+        
+      
 }
 
 /* .squareset {

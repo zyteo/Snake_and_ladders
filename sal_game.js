@@ -28,13 +28,11 @@ let p2Tile = 1;
 let roundNumber = 1;
 
 // ARRAY of snakes, with resulting tiles that piece will move down to
-const snakeTiles = [15,7];
-// const snakeTiles = [41,44,49,52,58,62,69,73,84,92,95,99];
-const snakeTilesResult = [1,5];
+const snakeTiles = [41,44,49,58,62,69,73,84,92,95,99];
+const snakeTilesResult = [22,37,34,42,60,50,35,66,90,74,7];
 // ARRAY of ladders, with resulting tiles that piece will move up to
-const ladderTiles = [3,8];
-// const ladderTiles = [12,51,57,76,78];
-const ladderTilesResult = [4,11];
+const ladderTiles = [12,51,57,76,78];
+const ladderTilesResult = [31,70,63,89,96];
 
 // FUNCTION Dice roll from 1 to 6
 // Function randomly generates and returns a number, randomDice, that has value 1-6.
@@ -87,14 +85,15 @@ const moveTileEnding = (currentTile) => {
     let tileAfterRoll = currentTile + diceRoll();
     let diceValue = tileAfterRoll - currentTile;
     $('.screen')[0].textContent = diceValue;
-    // FIRST CHECK if landed on snake/ladder
+    // FIRST CHECK if landed on snake
     if (snakeTiles.includes(tileAfterRoll)){
         return moveBack(tileAfterRoll);
     }
-    else if (ladderTiles.includes(tileAfterRoll)){
-        return moveForward(tileAfterRoll);
+    //END CHECK, if didn't land on snake, continue on
+    // if less than 100, continue on
+    else if (tileAfterRoll < 100){
+        return tileAfterRoll;
     }
-    //END CHECK, if didn't land on snake or ladder, continue on
     // If land nicely on last tile, 100.
     else if (tileAfterRoll === 100){
         alert('A player has reached 100! Select "New game" to start again!');
@@ -158,7 +157,7 @@ $(".rolldice").on("click", () => {
             p1Tile = moveTileEnding(p1Tile)
             console.log("endgame p1", p1Tile)
             $('.p1tile')[0].textContent = p1Tile;
-            // update
+            // update tile piece
             $('#' + `${p1Tile}`).append($('.circle1'))
         }
         // If tile less than 94, NORMAL 
@@ -178,8 +177,8 @@ $(".rolldice").on("click", () => {
         $('.roundnumber')[0].textContent = roundNumber;
         // check, if tile greater than 93?
         if (p2Tile > 93) {
-            p2Tile = moveTileEnding(p2Tile)
-            console.log("endgame p2", p2Tile)
+            p2Tile = moveTileEnding(p2Tile);
+            console.log("endgame p2", p2Tile);
             $('.p2tile')[0].textContent = p2Tile;
             $('#' + `${p2Tile}`).append($('.circle2'))
         }

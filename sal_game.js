@@ -102,12 +102,12 @@ const moveTileEnding = (currentTile) => {
     }
     // if goes beyond last tile, remain in original position
     else if (tileAfterRoll > 100){
-        return tileAfterRoll - diceValue;
+        return (tileAfterRoll - diceValue);
     }
 }
-
-
-// FUNCTION make row
+// FUNCTION Make table row + table details
+// Takes in 2 parameters (start,end) that is the start and end of the squares
+// Generates a row of 10 squares, with respective id
 const make1Row = (start,end) => {
     const $newrow = $('<tr>').addClass('tablerow');
     // if start < end, LEFT TO RIGHT
@@ -115,22 +115,22 @@ const make1Row = (start,end) => {
         // add the squares inside new row
         for (let i = start; i<= end; i++){
             // create individual square
-            const $sqaure = $('<td>').attr('id', i).addClass('square').text(i);
+            const $square = $('<td>').attr('id', i).addClass('square').text(i);
             // append to table row
-            $newrow.append($sqaure);
+            $newrow.append($square);
         }
     }
     // if end < start, RIGHT TO LEFT
     else if (end < start) {
         for (let i = start; i>= end; i--){
-            const $sqaure = $('<td>').attr('id', i).addClass('square').text(i);
-            $newrow.append($sqaure);
+            const $square = $('<td>').attr('id', i).addClass('square').text(i);
+            $newrow.append($square);
         }
     }
     $('table').append($newrow);
 }
 
-
+// Make the 10x10 board
 make1Row(100,91);
 make1Row(81,90);
 make1Row(80,71);
@@ -144,7 +144,6 @@ make1Row(1,10);
 
 // jquery/js event listeners
 $(() => {
-
 // On click, progress game
 $(".rolldice").on("click", () => {
     
@@ -210,60 +209,8 @@ $(".lightmode").on("click", () => {
   })
   
 })
-
-
-
-
-
-
-
-
-
-
-
-// // Function that randomly generates RGB values - color each square randomly
-// const randomColorRGB = () => {
-//     const red = Math.floor( Math.random() * 256 )
-//     const green = Math.floor( Math.random() * 256 )
-//     const blue = Math.floor( Math.random() * 256 )
-//     return `rgb(${red}, ${green}, ${blue})`
-// }
-
-
-
-
-// // const make10Squares2 = () => {
-// //     // create new div to add the squares inside
-// //     const $newdiv = $('<div>').addClass('squareset container');
-// //     // add the squares inside new div, different colors
-// //     for (let i=20; i >= 11; i--){
-// //         const $square = $('<div>').addClass('square').css('background-color', randomColorRGB());
-// //         $square.text(i).attr('id', i);
-// //         // append to main square div
-// //         $newdiv.append($square);
-// //     }
-// //     $('body').append($newdiv);
-// // }
-
-// // make10Squares();
-// // make10Squares2();
-
 // // ladder img
 // $ladderImg = $('<img>').attr('src', 'https://freesvg.org/img/portablejim-Ladder-flat.png');
 // $snakeImg = $('<img>').attr('src', 'http://www.clipartbest.com/cliparts/KTn/Lqk/KTnLqkaEc.png')
 // // $('.squareset').append($snakeImg)
 // $('.square:contains(17)')[0].append($snakeImg)
-
-// // tile piece
-// $('#3').addClass(circle)
-// // VARIABLE storing player & computer's tile number
-// let playerTile = 1;
-// let computerTile = 1;
-
-
-// // Maybe like after clicking roll...
-// // playerTile = moveTile(playerTile);
-
-// // For the game to run,
-// // while loop, for as long as no piece landed on 100 yet, run game
-

@@ -64,9 +64,9 @@ const moveForward = (piece) => {
 // Takes in corresponding player's tile number (currentTile), and returns the resulting tile they land on.
 const moveTileNormal = (currentTile) => {
     let tileAfterRoll = currentTile + diceRoll();
-  //   save the dice value
+    //   save the dice value
     let diceValue = tileAfterRoll - currentTile;
-   // display the dice value on screen
+    // display the dice value on screen
     $('.screen')[0].textContent = diceValue;
     // if land on snaketile, return value of tile player goes down to
     if (snakeTiles.includes(tileAfterRoll)){
@@ -105,9 +105,76 @@ const moveTileEnding = (currentTile) => {
     }
 }
 
+
+// FUNCTION make row
+const make1Row = (start,end) => {
+    const $newrow = $('<tr>').addClass('tablerow');
+    // if start < end, LEFT TO RIGHT
+    if (start < end) {
+        // add the squares inside new row
+        for (let i = start; i<= end; i++){
+            // create individual square
+            const $sqaure = $('<td>').attr('id', i).addClass('square').text(i);
+            // append to table row
+            $newrow.append($sqaure);
+        }
+    }
+    // if end < start, RIGHT TO LEFT
+    else if (end < start) {
+        for (let i = start; i>= end; i--){
+            const $sqaure = $('<td>').attr('id', i).addClass('square').text(i);
+            $newrow.append($sqaure);
+        }
+    }
+    $('table').append($newrow);
+}
+
+
+make1Row(100,91);
+make1Row(81,90);
+make1Row(80,71);
+make1Row(61,70);
+make1Row(60,51);
+make1Row(41,50);
+make1Row(40,31);
+make1Row(21,30);
+make1Row(20,11);
+make1Row(1,10);
+
+// const $newrow = $('<tr>').addClass('tablerow');
+//         // add the squares inside new row, different colors
+//         for (let i=1; i <= 10; i++){
+//             const $square = $('<td>').attr('id', i).addClass('square')
+//             // add text for square number
+//             $square.text(i)
+//             // append to main table row
+//             $newrow.append($square);
+//         }
+//         $('table').append($newrow);
+   
+
+
 // jquery/js event listeners
 $(() => {
 
+    // // Generate 1 table row
+    // // function to make a row with 10 squares
+    // const make10Squares = (startnum, endnum) => {
+    //     // create new row to add the squares inside
+    //     const $newrow = $('<tr>').addClass('tablerow');
+    //     // add the squares inside new row, different colors
+    //     for (let i=startnum; i <= endnum; i++){
+    //         const $square = $('<td>').attr('id', i).addClass('square').css('background-color', randomColorRGB());
+    //         // add text for square number
+    //         $square.text(i)
+    //         // append to main table row
+    //         $newrow.append($square);
+    //     }
+    //     $('table').append($newrow);
+    // }
+    
+    // make10Squares(1,10);
+    
 
 // On click, progress game
 $(".rolldice").on("click", () => {
@@ -188,20 +255,8 @@ $(".lightmode").on("click", () => {
 //     return `rgb(${red}, ${green}, ${blue})`
 // }
 
-// // // Generate board
-// // // function to make a row with 8 squares, start with red
-// // const make10Squares = () => {
-// //     // create new div to add the squares inside
-// //     const $newdiv = $('<div>').addClass('squareset container');
-// //     // add the squares inside new div, different colors
-// //     for (let i=1; i <= 10; i++){
-// //         const $square = $('<div>').addClass('square').css('background-color', randomColorRGB());
-// //         $square.text(i).attr('id', i);
-// //         // append to main square div
-// //         $newdiv.append($square);
-// //     }
-// //     $('body').append($newdiv);
-// // }
+
+
 
 // // const make10Squares2 = () => {
 // //     // create new div to add the squares inside

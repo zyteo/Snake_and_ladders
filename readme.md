@@ -7,8 +7,8 @@ technologies used, the approach taken, installation instructions, unsolved probl
 12 sept - created draw io file to draw out logic for game, added some js logic
 13 sept - created word file for pre proj planning
 14 sept - filled in the word file, added 10 tiles to test
-15 sept - added more to pre project planning doc, worked on some js code. Struggled very badly trying to draw the snakes and ladders on the board with js. Decide that I will use image to overlay.
-16 sept - started working on js logic, adding event listener. also mini test game worked, will scale up from here
+15 sept - added more to pre project planning doc, worked on some js code. Struggled very badly trying to draw the snakes and ladders on the board with js. Decide that I will use image to overlay. (this was the night where I was actually reconsidering my game choice of snake and ladders and wanted to switch to another game)
+16 sept - started working on js logic, adding event listener. also mini test game worked, will scale up from here. Made the 10x10 board, added the pieces, worked on some css to make it look abit nicer. Simon's advice on pieces was to create a div with the pieces, and then overlay on the tables. Great idea, originally I wanted to remove/add class of "circle1" each round, struggled with it
 
 Plan: Moksha-Patamu (Snake and Ladders) - classic board game
 rules: https://www.ymimports.com/pages/how-to-play-snakes-and-ladders

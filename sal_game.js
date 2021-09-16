@@ -27,6 +27,15 @@ let p1Tile = 1;
 let p2Tile = 1;
 let roundNumber = 1;
 
+// ARRAY of snakes, with resulting tiles that piece will move down to
+const snakeTiles = [15,7];
+// const snakeTiles = [41,44,49,52,58,62,69,73,84,92,95,99];
+const snakeTilesResult = [1,5];
+// ARRAY of ladders, with resulting tiles that piece will move up to
+const ladderTiles = [3,8];
+// const ladderTiles = [12,51,57,76,78];
+const ladderTilesResult = [4,11];
+
 // FUNCTION Dice roll from 1 to 6
 // Function randomly generates and returns a number, randomDice, that has value 1-6.
 const diceRoll = () => {
@@ -96,6 +105,7 @@ const moveTileEnding = (currentTile) => {
     }
 }
 
+
 // On click, progress game
 $(".rolldice").on("click", () => {
     
@@ -104,29 +114,46 @@ $(".rolldice").on("click", () => {
         console.log(`${roundNumber} so player 1!`)
         // update round number first
         roundNumber += 1;
+        $('.roundnumber')[0].textContent = roundNumber;
         // check, if tile greater than 17?
         if (p1Tile > 17) {
             p1Tile = moveTileEnding(p1Tile)
             console.log("endgame p1", p1Tile)
-            // update tile
+            $('.p1tile')[0].textContent = p1Tile;
         }
         // If tile less than 17, NORMAL 
         else {
             p1Tile = moveTileNormal(p1Tile);
             console.log("p1",p1Tile);
+            $('.p1tile')[0].textContent = p1Tile;
         }
-        // xxxx.innertext = p1Tile
     }
     
-    
-  });
+    // PLAYER 2 ROUND if roundnumber is even
+    else if (roundNumber % 2 === 0){
+        console.log(`${roundNumber} so player 2!`)
+        // update round number first
+        roundNumber += 1;
+        $('.roundnumber')[0].textContent = roundNumber;
+        // check, if tile greater than 17?
+        if (p2Tile > 17) {
+            p2Tile = moveTileEnding(p2Tile)
+            console.log("endgame p2", p2Tile)
+            $('.p2tile')[0].textContent = p2Tile;
+        }
+        // If tile less than 17, NORMAL 
+        else {
+            p2Tile = moveTileNormal(p2Tile);
+            console.log("p2",p2Tile);
+            $('.p2tile')[0].textContent = p2Tile;
+        }
+    }
+});
 
-
-
-
-  // 
-  
-  
+// on click, reset game by refreshing page
+  $(".refresh").on("click", () => {
+    window.location.reload();
+  })
   
   
 
@@ -179,15 +206,6 @@ $(".rolldice").on("click", () => {
 
 // // make10Squares();
 // // make10Squares2();
-
-// ARRAY of snakes, with resulting tiles that piece will move down to
-const snakeTiles = [15,7];
-// const snakeTiles = [41,44,49,52,58,62,69,73,84,92,95,99];
-const snakeTilesResult = [1,5];
-// ARRAY of ladders, with resulting tiles that piece will move up to
-const ladderTiles = [3,8];
-// const ladderTiles = [12,51,57,76,78];
-const ladderTilesResult = [4,11];
 
 // // ladder img
 // $ladderImg = $('<img>').attr('src', 'https://freesvg.org/img/portablejim-Ladder-flat.png');

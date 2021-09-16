@@ -1,34 +1,37 @@
 /* GA SEI 32 Project 1: Game (Moksha Patamu) */
 /* ZY, 10 Sept 2021 */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 body {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(183, 228, 165);
+    font-family: 'Inter', sans-serif;
+    text-align: center;
 }
-body .dark{
+/* body .dark{
     background-color: rgb(0, 0, 0);
     color: white;
-}
+    font-family: 'Inter', sans-serif;
+} */
 
 
 h2 {
-color: rgb(183, 209, 66);
+color: black(183, 209, 66);
 font-size: 20px;
-font-family: Verdana, Geneva, Tahoma, sans-serif
-}
-
-#firstDiv {
-background-color: lightsalmon;
+font-family: 'Inter', sans-serif;
+background-color: white;
+text-align: center;
 }
 
 .rules {
 background-color: lightyellow;
+font-family: 'Inter', sans-serif;
 }
 
-.table {
-    font-family: arial, sans-serif;
-    border: 2px solid black;
+table {
+    font-family: 'Inter', sans-serif;
     width: 100%;
-    text-align: left;
+    text-align: center;
 }
 
 td {
@@ -36,27 +39,16 @@ td {
     text-align: left;
 }
 
-
-.ul {
-    background-color: rgb(145, 163, 79);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.orderlist {
-    background-color: rgb(99, 156, 118);
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-}
-
 .square {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     /* inline block sets them horinzontally. flex vertical */
     display: inline-block;
     align-items: center;
     justify-content: center;
     /* text color */
     color: black;
-    text-shadow: 5px 5px 5px black;
+    text-shadow: 5px 5px 5px rgb(168, 165, 165);
     border: 1px solid rgb(73, 66, 66);
     
 }
@@ -64,23 +56,28 @@ td {
 .square .dark {
     /* text color */
     color: white;
-    text-shadow: 5px 5px 5px black;
-    border: 1px solid white
+    text-shadow: 5px 5px 5px rgb(168, 165, 165);
+    border: 1px solid white;
     
 }
 
-.circle1 {
 
-        background: red;
+.circle1 {
+        background: rgb(245, 110, 234);
+        text-shadow: 5px 5px 5px rgb(168, 165, 165);
         border-radius: 50%;
-        z-index: 10;    
-      
+        z-index: 10;
+        width: 25px;
+        height: 25px;    
+        text-align: center;
 }
 
 .circle2 {
-
-    background: blue;
+    background: cyan;
+    text-shadow: 5px 5px 5px rgb(168, 165, 165);
     border-radius: 50%;    
     z-index: 10;
-  
+    width: 25px;
+    height: 25px;
+    text-align: center;
 }

@@ -95,12 +95,13 @@ const moveTileEnding = (currentTile) => {
         return moveForward(tileAfterRoll);
     }
     //END CHECK, if didn't land on snake or ladder, continue on
-    // If land nicely on last tile, 20.
-    else if (tileAfterRoll === 20){
+    // If land nicely on last tile, 100.
+    else if (tileAfterRoll === 100){
+        alert('A player has reached 100! Select "New game" to start again!');
         return tileAfterRoll;
     }
     // if goes beyond last tile, remain in original position
-    else if (tileAfterRoll > 20){
+    else if (tileAfterRoll > 100){
         return tileAfterRoll - diceValue;
     }
 }
@@ -141,40 +142,8 @@ make1Row(21,30);
 make1Row(20,11);
 make1Row(1,10);
 
-// const $newrow = $('<tr>').addClass('tablerow');
-//         // add the squares inside new row, different colors
-//         for (let i=1; i <= 10; i++){
-//             const $square = $('<td>').attr('id', i).addClass('square')
-//             // add text for square number
-//             $square.text(i)
-//             // append to main table row
-//             $newrow.append($square);
-//         }
-//         $('table').append($newrow);
-   
-
-
 // jquery/js event listeners
 $(() => {
-
-    // // Generate 1 table row
-    // // function to make a row with 10 squares
-    // const make10Squares = (startnum, endnum) => {
-    //     // create new row to add the squares inside
-    //     const $newrow = $('<tr>').addClass('tablerow');
-    //     // add the squares inside new row, different colors
-    //     for (let i=startnum; i <= endnum; i++){
-    //         const $square = $('<td>').attr('id', i).addClass('square').css('background-color', randomColorRGB());
-    //         // add text for square number
-    //         $square.text(i)
-    //         // append to main table row
-    //         $newrow.append($square);
-    //     }
-    //     $('table').append($newrow);
-    // }
-    
-    // make10Squares(1,10);
-    
 
 // On click, progress game
 $(".rolldice").on("click", () => {
@@ -185,17 +154,20 @@ $(".rolldice").on("click", () => {
         // update round number first
         roundNumber += 1;
         $('.roundnumber')[0].textContent = roundNumber;
-        // check, if tile greater than 17?
-        if (p1Tile > 17) {
+        // check, if tile greater than 93?
+        if (p1Tile > 93) {
             p1Tile = moveTileEnding(p1Tile)
             console.log("endgame p1", p1Tile)
             $('.p1tile')[0].textContent = p1Tile;
+            // update
+            $('#' + `${p1Tile}`).append($('.circle1'))
         }
-        // If tile less than 17, NORMAL 
+        // If tile less than 94, NORMAL 
         else {
             p1Tile = moveTileNormal(p1Tile);
             console.log("p1",p1Tile);
             $('.p1tile')[0].textContent = p1Tile;
+            $('#' + `${p1Tile}`).append($('.circle1'))
         }
     }
     
@@ -205,17 +177,19 @@ $(".rolldice").on("click", () => {
         // update round number first
         roundNumber += 1;
         $('.roundnumber')[0].textContent = roundNumber;
-        // check, if tile greater than 17?
-        if (p2Tile > 17) {
+        // check, if tile greater than 93?
+        if (p2Tile > 93) {
             p2Tile = moveTileEnding(p2Tile)
             console.log("endgame p2", p2Tile)
             $('.p2tile')[0].textContent = p2Tile;
+            $('#' + `${p2Tile}`).append($('.circle2'))
         }
-        // If tile less than 17, NORMAL 
+        // If tile less than 94, NORMAL 
         else {
             p2Tile = moveTileNormal(p2Tile);
             console.log("p2",p2Tile);
             $('.p2tile')[0].textContent = p2Tile;
+            $('#' + `${p2Tile}`).append($('.circle2'))
         }
     }
 });

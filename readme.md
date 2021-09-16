@@ -8,7 +8,7 @@ technologies used, the approach taken, installation instructions, unsolved probl
 13 sept - created word file for pre proj planning
 14 sept - filled in the word file, added 10 tiles to test
 15 sept - added more to pre project planning doc, worked on some js code. Struggled very badly trying to draw the snakes and ladders on the board with js. Decide that I will use image to overlay.
-16 sept - started working on js logic, adding event listener
+16 sept - started working on js logic, adding event listener. also mini test game worked, will scale up from here
 
 Plan: Moksha-Patamu (Snake and Ladders) - classic board game
 rules: https://www.ymimports.com/pages/how-to-play-snakes-and-ladders

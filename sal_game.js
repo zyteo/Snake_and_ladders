@@ -105,6 +105,9 @@ const moveTileEnding = (currentTile) => {
     }
 }
 
+// jquery/js event listeners
+$(() => {
+
 
 // On click, progress game
 $(".rolldice").on("click", () => {
@@ -154,9 +157,18 @@ $(".rolldice").on("click", () => {
   $(".refresh").on("click", () => {
     window.location.reload();
   })
-  
-  
 
+// on click, set dark mode
+$(".darkmode").on("click", () => {
+    $('body')[0].className = "dark"
+  })
+  
+// on click, set light mode
+$(".lightmode").on("click", () => {
+    $('body')[0].className = ""
+  })
+  
+})
 
 
 

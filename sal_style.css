@@ -2,11 +2,16 @@
 /* ZY, 10 Sept 2021 */
 
 body {
-    background-color: rgb(212, 173, 173);
-  }
+    background-color: rgb(255, 255, 255);
+}
+body .dark{
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
 
 h2 {
-color: rgb(0, 17, 255);
+color: rgb(183, 209, 66);
 font-size: 20px;
 font-family: Verdana, Geneva, Tahoma, sans-serif
 }
@@ -26,16 +31,12 @@ background-color: lightyellow;
     text-align: left;
 }
 
-.thead {
-    background-color: #04AA6D;
-    border: 1px solid #000000;
-    color: white;
+td {
+    background-color:white;
+    text-align: left;
 }
-.td {
-    background-color:rgba(185, 185, 185, 0.3);
-    border: 1px solid #000000;
-    text-align: center;
-}
+
+
 .ul {
     background-color: rgb(145, 163, 79);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -54,22 +55,30 @@ background-color: lightyellow;
     align-items: center;
     justify-content: center;
     /* text color */
-    color: white;
+    color: black;
     text-shadow: 5px 5px 5px black;
-    border: 2px solid rgb(73, 66, 66);
+    border: 1px solid rgb(73, 66, 66);
     
 }
 
-.circle {
+.square .dark {
+    /* text color */
+    color: white;
+    text-shadow: 5px 5px 5px black;
+    border: 1px solid white
+    
+}
+
+.circle1 {
 
         background: red;
-        border-radius: 50%;
-        
-        
+        border-radius: 50%;    
       
 }
 
-/* .squareset {
+.circle2 {
 
-    display: inline-block;
-} */
+    background: blue;
+    border-radius: 50%;    
+  
+}

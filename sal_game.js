@@ -202,6 +202,7 @@ $(".darkmode").on("click", () => {
     $('body')[0].className = "darkmode";
     $('p')[0].className = "darkmode";
     $('h2')[0].className = "darkmode";
+    $('.badge-light').addClass('badge-dark').removeClass('badge-light')
 
   })
   
@@ -210,5 +211,6 @@ $(".lightmode").on("click", () => {
     $('body')[0].className = "";
     $('p')[0].className = "";
     $('h2')[0].className = "";
+    $('.badge-dark').addClass('badge-light').removeClass('badge-dark')
   })
 })

@@ -20,7 +20,7 @@ body {
 .imgoverlay {
     width: 28.4em;
     height: 28.4em;
-    background-image: url('Images/Boardimage_overlay.jpg');
+    background-image: url('Images/images/Board_image.png');
     z-index:100;
     position: absolute;
 }

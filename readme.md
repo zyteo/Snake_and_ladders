@@ -3,6 +3,7 @@
 
 Welcome to my project folder for the classic board game Moksha Patamu (Snake and Ladders)!
 
+============Play the game here: https://snake-and-ladders.vercel.app/ ================  
 This game was created with HTML, CSS (+bootstrap), JS (+jQuery), and Photoshop.\
 I had to do some research before creating the game since it was a long time since I last played Snake and Ladders.\
 That was when I learnt that the game originated from India, and there were more snakes than ladders. I decided to base my game on the original game.\

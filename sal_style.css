@@ -7,6 +7,9 @@ body {
     background-color: rgb(183, 228, 165);
     font-family: 'Inter', sans-serif;
     text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 body.darkmode{
     background-color: rgba(0, 0, 0, 0.8);

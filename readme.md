@@ -1,13 +1,13 @@
 <!-- GA SEI 32 Project 1: Game -->
 <!-- ZY, 10 Sept 2021 -->
 
-Welcome to my project folder for the classic board game Moksha Patamu (Snake and Ladders)!\
+Welcome to my project folder for the classic board game Moksha Patamu (Snake and Ladders)!
 
 This game was created with HTML, CSS (+bootstrap), JS (+jQuery), and Photoshop.\
 I had to do some research before creating the game since it was a long time since I last played Snake and Ladders.\
 That was when I learnt that the game originated from India, and there were more snakes than ladders. I decided to base my game on the original game.\
 Some websites I read before starting on the game:\
-https://www.ymimports.com/pages/how-to-play-snakes-and-ladders
+https://www.ymimports.com/pages/how-to-play-snakes-and-ladders  
 https://www.scoopwhoop.com/snakes-ladders-invented-in-india/
 
 Rules of Game:
@@ -16,7 +16,7 @@ When you land at the bottom of a ladder, your piece would move up. Landing at th
 
 Note that a player will have to roll the exact number required to land their piece on the 100th tile. So if the player rolls a higher number than needed to land exactly on 100, their piece does not move and remains there until their next turn.
 
-Timeline:
+Timeline: \
 10 sept - created files, added rules + some logic\
 11 sept - created html table to test out\
 12 sept - created draw io file to draw out logic for game, added some js logic\

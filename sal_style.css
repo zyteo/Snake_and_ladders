@@ -12,11 +12,27 @@ body {
     margin: auto;
     text-align: center;
 }
-/* body .dark{
-    background-color: rgb(0, 0, 0);
+body.darkmode{
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     font-family: 'Inter', sans-serif;
-} */
+    text-align: center;
+}
+
+p.darkmode{
+    
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+h2.darkmode{
+    
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
 .imgoverlay {
     width: 28.4em;
     height: 28.4em;

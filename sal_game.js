@@ -199,12 +199,17 @@ $(".rolldice").on("click", () => {
 
 // on click, set dark mode
 $(".darkmode").on("click", () => {
-    $('body')[0].className = "dark"
+    $('body')[0].className = "darkmode";
+    $('p')[0].className = "darkmode";
+    $('h2')[0].className = "darkmode";
+
   })
   
 // on click, set light mode
 $(".lightmode").on("click", () => {
-    $('body')[0].className = ""
+    $('body')[0].className = "";
+    $('p')[0].className = "";
+    $('h2')[0].className = "";
   })
   
 })

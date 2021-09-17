@@ -21,7 +21,7 @@ body {
     width: 28.4em;
     height: 28.4em;
     background-image: url('Images/images/Board_image.png');
-    z-index:100;
+    z-index:10;
     position: absolute;
 }
 .board {

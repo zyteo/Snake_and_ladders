@@ -14,9 +14,9 @@ body {
     font-family: 'Inter', sans-serif;
 } */
 
-.board {
-    display: inline-block;
-}
+/* .board {
+    display: flexbox;
+} */
 h2 {
 color: black(183, 209, 66);
 font-size: 20px;

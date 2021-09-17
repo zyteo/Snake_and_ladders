@@ -211,10 +211,4 @@ $(".lightmode").on("click", () => {
     $('p')[0].className = "";
     $('h2')[0].className = "";
   })
-  
 })
-// // ladder img
-// $ladderImg = $('<img>').attr('src', 'https://freesvg.org/img/portablejim-Ladder-flat.png');
-// $snakeImg = $('<img>').attr('src', 'http://www.clipartbest.com/cliparts/KTn/Lqk/KTnLqkaEc.png')
-// // $('.squareset').append($snakeImg)
-// $('.square:contains(17)')[0].append($snakeImg)

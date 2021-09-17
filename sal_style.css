@@ -2,14 +2,10 @@
 /* ZY, 10 Sept 2021 */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-/* check out root for css */
+
 body {
     background-color: rgb(183, 228, 165);
     font-family: 'Inter', sans-serif;
-    text-align: center;
-}
-.container {
-    margin: auto;
     text-align: center;
 }
 body.darkmode{
@@ -18,13 +14,27 @@ body.darkmode{
     font-family: 'Inter', sans-serif;
     text-align: center;
 }
-
+.container {
+    margin: auto;
+    text-align: center;
+}
+p {
+    background-color: lightyellow;
+    font-family: 'Inter', sans-serif;
+}
 p.darkmode{
     
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     font-family: 'Inter', sans-serif;
     text-align: center;
+}
+h2 {
+color: black(183, 209, 66);
+font-size: 20px;
+font-family: 'Inter', sans-serif;
+background-color: white;
+text-align: center;
 }
 h2.darkmode{
     
@@ -41,27 +51,11 @@ h2.darkmode{
     position: absolute;
 }
 .board {
-    
     width: 28.4em;
     height: 28.4em;
     /* looks nice on PC but not on mobile devices */
     /* margin-left: 20.5em; */
 }
-
-h2 {
-color: black(183, 209, 66);
-font-size: 20px;
-font-family: 'Inter', sans-serif;
-/* font-family: Verdana, Geneva, Tahoma, sans-serif; */
-background-color: white;
-text-align: center;
-}
-
-.rules {
-background-color: lightyellow;
-font-family: 'Inter', sans-serif;
-}
-
 table {
     font-family: 'Inter', sans-serif;
     text-align: center;

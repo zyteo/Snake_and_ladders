@@ -14,11 +14,14 @@ body {
     font-family: 'Inter', sans-serif;
 } */
 
-
+.board {
+    display: inline-block;
+}
 h2 {
 color: black(183, 209, 66);
 font-size: 20px;
 font-family: 'Inter', sans-serif;
+/* font-family: Verdana, Geneva, Tahoma, sans-serif; */
 background-color: white;
 text-align: center;
 }
@@ -66,9 +69,9 @@ td {
         background: rgb(245, 110, 234);
         text-shadow: 5px 5px 5px rgb(168, 165, 165);
         border-radius: 50%;
-        z-index: 10;
-        width: 25px;
-        height: 25px;    
+        z-index: 100;
+        width: 21px;
+        height: 21px;    
         text-align: center;
 }
 
@@ -76,8 +79,8 @@ td {
     background: cyan;
     text-shadow: 5px 5px 5px rgb(168, 165, 165);
     border-radius: 50%;    
-    z-index: 10;
-    width: 25px;
-    height: 25px;
+    z-index: 100;
+    width: 21px;
+    height: 21px;
     text-align: center;
 }

@@ -141,6 +141,15 @@ make1Row(21,30);
 make1Row(20,11);
 make1Row(1,10);
 
+const darkMode = () => {
+    $('body')[0].className = "darkmode";
+    $('p')[0].className = "darkmode";
+    $('h2')[0].className = "darkmode";
+    // change the screen colours displaying the dice value etc
+    $('.badge-light').addClass('badge-dark').removeClass('badge-light');
+    // switch to light mode button
+    $('.btn-dark').addClass('btn-light lightmode').removeClass('btn-dark darkmode').text("Light mode");
+}
 // jquery/js event listeners
 $(() => {
 // On click, progress game
@@ -198,19 +207,21 @@ $(".rolldice").on("click", () => {
   })
 
 // on click, set dark mode
-$(".darkmode").on("click", () => {
-    $('body')[0].className = "darkmode";
-    $('p')[0].className = "darkmode";
-    $('h2')[0].className = "darkmode";
-    $('.badge-light').addClass('badge-dark').removeClass('badge-light')
 
-  })
+
+// $(".darkmode").on("click", () => {
+    
+
+//   })
+})  
   
+$(() => {  
 // on click, set light mode
 $(".lightmode").on("click", () => {
     $('body')[0].className = "";
     $('p')[0].className = "";
     $('h2')[0].className = "";
     $('.badge-dark').addClass('badge-light').removeClass('badge-dark')
+    $('.btn-light').addClass('btn-dark darkmode').removeClass('btn-light lightmode').text("Dark mode");
   })
 })

@@ -19,59 +19,63 @@
     </head>
     
     <body class="">
+        <!-- header at top of page -->
         <h2>Welcome to the game of Moksha-Patamu, otherwise known as Snake and Ladders!</h2>
-
         
-            <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-              Rules
-            </button>
+        <!-- button to toggle rules -->
+        <button class="btn btn-danger mb-1" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Rules
+        </button>
         
-
         <div class="collapse rules" id="collapseExample">
             <p class="rules">
                 Rules of Game:<br>
                 The first player that reaches the highest space on the board, 100, wins the game.<br>
-                When you land at the bottom of a ladder, your piece would move up. Landing at the top of a ladder does nothing. 
-                <br>When you land at the top of a snake, your piece would move down. Landing at the base of a snake does nothing.<br>
+                When you land at the bottom of a ladder, your piece would move up. Landing at the top of a ladder does nothing.<br>
+                When you land at the top of a snake, your piece would move down. Landing at the base of a snake does nothing.<br>
                 
-                Note that a player will have to roll the exact number required to land their piece on the 100th tile. So if the player rolls a higher number than needed to land exactly on 100, their piece does not move and remains there until their next turn.
+                Note that a player will have to roll the exact number required to land their piece on the 100th tile.<br>
+                So if the player rolls a higher number than needed to land exactly on 100, their piece does not move and remains there until their next turn.
             </p>
         </div>
-        <p class="rules">
-        </p>
-        <div class="container">
+        
+        <!-- button container for all the buttons -->
+        <div class="buttoncontainer">
             <button class="btn btn-success rolldice mr-1">Let's roll!</button>
-            <button type="button" class="btn btn-secondary mr-1" data-toggle="tooltip" data-placement="top" title="To prevent carpal tunnel...still working on it!">Autoplay</button>
+            <button type="button" class="btn btn-secondary mr-1 autoplay" data-toggle="tooltip" data-placement="top" title="To prevent carpal tunnel...still working on it!">Autoplay</button>
             <button class="btn btn-primary refresh mr-1">New game</button>
             <button class="btn btn-dark darkmode mr-1">Dark mode</button>
             <button class="btn btn-light lightmode">Light mode</button>
+        </div>
+
+        <!-- container to store the screen display information + tile pieces -->
+        <div class="infocontainer">
             <div>&#9858 Dice value &#9861
                 <div class="screen badge badge-pill badge-light">&#9858</div>
             </div>
-            
+            <div>Round Number
+                <div class="screen roundnumber badge badge-pill badge-light">1</div>
+            </div>
+            <div class="p1">Player 1's tile
+                <div class="screen p1tile badge badge-pill badge-light">1</div>
+                <div class="circle1">1</div>
+            </div>
+            <div class="p2">Player 2's tile
+                <div class="screen p2tile badge badge-pill badge-light">1</div>
+                <div class="circle2">2</div>
+            </div>
+        </div>
+
+        <!-- container to contain the board -->
+        <div class="container">
             <div class="board">
                 <div class="imgoverlay"></div>
                 <table>
                     <!-- use JS to create 10x10 board -->
                 </table>
             </div>
-
-            <div>Round Number
-                <div class="screen roundnumber badge badge-pill badge-light">1</div>
-            </div>
-
-
-            <div class="p1">Player 1's tile
-                <div class="screen p1tile badge badge-pill badge-light">1</div>
-                <div class="circle1">1</div>
-            </div>
-            
-            <div class="p2">Player 2's tile
-                <div class="screen p2tile badge badge-pill badge-light">1</div>
-                <div class="circle2">2</div>
-            </div>
-            
         </div>
+        
         <!-- This includes popper which is needed for tooltip -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
         <script src="sal_game.js"></script>

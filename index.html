@@ -3,6 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,12 +20,24 @@
     
     <body class="">
         <h2>Welcome to the game of Moksha-Patamu, otherwise known as Snake and Ladders!</h2>
-        <p class="rules">Rules of Game:<br>
-            The first player that reaches the highest space on the board, 100, wins the game.<br>
-            When you land at the bottom of a ladder, your piece would move up. Landing at the top of a ladder does nothing. 
-            <br>When you land at the top of a snake, your piece would move down. Landing at the base of a snake does nothing.<br>
-            
-            Note that a player will have to roll the exact number required to land their piece on the 100th tile. So if the player rolls a higher number than needed to land exactly on 100, their piece does not move and remains there until their next turn.
+
+        
+            <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              Rules
+            </button>
+        
+
+        <div class="collapse rules" id="collapseExample">
+            <p class="rules">
+                Rules of Game:<br>
+                The first player that reaches the highest space on the board, 100, wins the game.<br>
+                When you land at the bottom of a ladder, your piece would move up. Landing at the top of a ladder does nothing. 
+                <br>When you land at the top of a snake, your piece would move down. Landing at the base of a snake does nothing.<br>
+                
+                Note that a player will have to roll the exact number required to land their piece on the 100th tile. So if the player rolls a higher number than needed to land exactly on 100, their piece does not move and remains there until their next turn.
+            </p>
+        </div>
+        <p class="rules">
         </p>
         <div class="container">
             <button class="btn btn-success rolldice mr-1">Let's roll!</button>

@@ -18,13 +18,9 @@ body.darkmode{
     margin: auto;
     text-align: center;
 }
-p {
-    background-color: lightyellow;
-    font-family: 'Inter', sans-serif;
-}
 p.darkmode{
     
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0);
     color: white;
     font-family: 'Inter', sans-serif;
     text-align: center;

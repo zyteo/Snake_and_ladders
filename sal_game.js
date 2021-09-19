@@ -197,25 +197,27 @@ $(".rolldice").on("click", () => {
     window.location.reload();
   })
 
-// on click, set dark mode
-$(".darkmode").on("click", () => {
-    $('body')[0].className = "darkmode";
-    $('p')[0].className = "darkmode";
-    $('h2')[0].className = "darkmode";
-    // change the screen colours displaying the dice value etc
-    $('.badge-light').addClass('badge-dark').removeClass('badge-light');
-    // switch to light mode button
-    $('.btn-dark').addClass('btn-light lightmode').removeClass('btn-dark darkmode').text("Light mode");
-
-  })
-  
-  
-// on click, set light mode
-$(".lightmode").on("click", () => {
-    $('body')[0].className = "";
-    $('p')[0].className = "";
-    $('h2')[0].className = "";
-    $('.badge-dark').addClass('badge-light').removeClass('badge-dark')
-    $('.btn-light').addClass('btn-dark darkmode').removeClass('btn-light lightmode').text("Dark mode");
-  })
+  // on click, set dark mode
+  $(document).on("click", ".darkmode", () => {
+    //   $('body')[0].className = "darkmode";
+    //   $('p')[0].className = "darkmode";
+    //   $('h2')[0].className = "darkmode";
+      $('body,p,h2').toggleClass("darkmode");
+      // change the screen colours displaying the dice value etc
+      $('.badge-light').addClass('badge-dark').removeClass('badge-light');
+      // switch to light mode button
+      $('.btn-dark').addClass('btn-light lightmode').removeClass('btn-dark darkmode').text("Light mode");
+      
+    })
+    // on click, set light mode
+    $(document).on("click", ".lightmode", () => {
+        // $('body')[0].className = "";
+        // $('p')[0].className = "";
+        // $('h2')[0].className = "";
+        $('.badge-dark').addClass('badge-light').removeClass('badge-dark')
+        $('body,p,h2').toggleClass("lightmode");
+        $('.btn-light').addClass('btn-dark darkmode').removeClass('btn-light lightmode').text("Dark mode");
+      })
+    
+    
 })

@@ -90,7 +90,7 @@ const moveTileEnding = (currentTile) => {
         return moveBack(tileAfterRoll);
     }
     //END CHECK, if didn't land on snake, continue on
-    // if less than 100, continue on
+    // if less than 100, 
     else if (tileAfterRoll < 100){
         return tileAfterRoll;
     }
@@ -126,6 +126,7 @@ const make1Row = (start,end) => {
             $newrow.append($square);
         }
     }
+    // append table row to table
     $('table').append($newrow);
 }
 
@@ -141,11 +142,8 @@ make1Row(21,30);
 make1Row(20,11);
 make1Row(1,10);
 
-// jquery/js event listeners
-$(() => {
-// On click, progress game
-$(".rolldice").on("click", () => {
-    
+// FUNCTION to progress the game 
+const progressGame = () => {
     // PLAYER 1 ROUND if roundnumber is odd
     if (roundNumber % 2 !== 0){
         console.log(`${roundNumber} so player 1!`)
@@ -190,7 +188,16 @@ $(".rolldice").on("click", () => {
             $('#' + `${p2Tile}`).append($('.circle2'))
         }
     }
-});
+}
+
+
+// jquery/js event listeners
+$(() => {
+// On click, stop autoplay, progress game
+$(".rolldice").on("click", progressGame);
+
+// on click, autoplay game, with interval of 1sec
+$(".autoplay").on("click", setInterval(progressGame, 1000));
 
 // on click, reset game by refreshing page
   $(".refresh").on("click", () => {

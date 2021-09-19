@@ -14,6 +14,11 @@ body.darkmode{
     font-family: 'Inter', sans-serif;
     text-align: center;
 }
+/* .infoboard{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+} */
 .container {
     margin: auto;
     text-align: center;

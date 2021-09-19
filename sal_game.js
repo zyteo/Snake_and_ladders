@@ -189,15 +189,24 @@ const progressGame = () => {
         }
     }
 }
+let playGame;
 
+const autoPlay = () => {
+    playGame = setInterval(progressGame, 1000);
+}
+
+const normalRoll = () => {
+    clearInterval(playGame);
+    progressGame();
+}
 
 // jquery/js event listeners
 $(() => {
 // On click, stop autoplay, progress game
-$(".rolldice").on("click", progressGame);
+// $(".rolldice").on("click", normalRoll);
 
 // on click, autoplay game, with interval of 1sec
-$(".autoplay").on("click", setInterval(progressGame, 1000));
+// $(".autoplay").on("click", autoPlay);
 
 // on click, reset game by refreshing page
   $(".refresh").on("click", () => {

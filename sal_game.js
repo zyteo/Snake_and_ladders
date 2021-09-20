@@ -26,6 +26,9 @@
 let p1Tile = 1;
 let p2Tile = 1;
 let roundNumber = 1;
+// define playGame as global variable for autoplay function
+// refer https://stackoverflow.com/questions/26313066/setinterval-and-clearinterval-inside-of-a-button
+let playGame;
 
 // ARRAY of snakes, with resulting tiles that piece will move down to
 const snakeTiles = [41,44,49,58,62,69,73,84,92,95,99];
@@ -97,6 +100,7 @@ const moveTileEnding = (currentTile) => {
     // If land nicely on last tile, 100.
     else if (tileAfterRoll === 100){
         alert('A player has reached 100! Select "New game" to start again!');
+        clearInterval(playGame);
         return tileAfterRoll;
     }
     // if goes beyond last tile, remain in original position
@@ -143,6 +147,7 @@ make1Row(20,11);
 make1Row(1,10);
 
 // FUNCTION to progress the game 
+// Function will check for round number, and then perform playing options on the pieces. Also updates the text content (round number, player tile and player piece) on the screens.
 const progressGame = () => {
     // PLAYER 1 ROUND if roundnumber is odd
     if (roundNumber % 2 !== 0){
@@ -189,24 +194,25 @@ const progressGame = () => {
         }
     }
 }
-let playGame;
 
+// FUNCTION to progress the game automatically
+// Function uses the built-in setinterval function to run the progressGame function above, interval of 1sec.
+// This is for the "Autoplay" button
 const autoPlay = () => {
     playGame = setInterval(progressGame, 1000);
 }
 
+// FUNCTION to progress the game
+// Function first clears the setinterval function to stop autoplay and then run the progressGame function.
+// This is for the "Let's roll!" button
 const normalRoll = () => {
     clearInterval(playGame);
     progressGame();
 }
 
+
 // jquery/js event listeners
 $(() => {
-// On click, stop autoplay, progress game
-// $(".rolldice").on("click", normalRoll);
-
-// on click, autoplay game, with interval of 1sec
-// $(".autoplay").on("click", autoPlay);
 
 // on click, reset game by refreshing page
   $(".refresh").on("click", () => {

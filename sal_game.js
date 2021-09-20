@@ -210,6 +210,22 @@ const normalRoll = () => {
     progressGame();
 }
 
+// FUNCTION to set dark mode
+// Function checks if checkbox is checked, if yes then enable dark mode, otherwise is light mode
+// This is for the "Dark mode" checkbox
+// refer https://stackoverflow.com/questions/6358673/javascript-checkbox-onchange
+const darkMode = () => {
+    if (document.getElementById('toggledark').checked) {
+        $('body,p')[0].className = "darkmode";
+        $('h2')[0].className = "darkmode";
+        // change the screen colours displaying the dice value etc
+        $('.badge-light').addClass('badge-dark').removeClass('badge-light');
+    } else {
+        $('body,p')[0].className = "";
+        $('h2')[0].className = "";
+        $('.badge-dark').addClass('badge-light').removeClass('badge-dark')
+    }
+}
 
 // jquery/js event listeners
 $(() => {
@@ -218,26 +234,5 @@ $(() => {
   $(".refresh").on("click", () => {
     window.location.reload();
   })
-
-  // on click, set dark mode
-  $(document).on("click", ".darkmode", () => {
-      $('body,p')[0].className = "darkmode";
-      $('h2')[0].className = "darkmode";
-    //   $('body,p,h2').toggleClass("darkmode");
-      // change the screen colours displaying the dice value etc
-      $('.badge-light').addClass('badge-dark').removeClass('badge-light');
-      // switch to light mode button
-    //   $('.btn-dark').addClass('btn-light lightmode').removeClass('btn-dark darkmode').text("Light mode");
-      
-    })
-    // on click, set light mode
-    $(".lightmode").on("click", () => {
-        $('body,p')[0].className = "";
-        $('h2')[0].className = "";
-        $('.badge-dark').addClass('badge-light').removeClass('badge-dark')
-        // $('body,p,h2').toggleClass("lightmode");
-        // $('.btn-light').addClass('btn-dark darkmode').removeClass('btn-light lightmode').text("Dark mode");
-      })
-    
     
 })

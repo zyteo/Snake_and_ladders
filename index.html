@@ -21,11 +21,17 @@
     <body class="">
         <!-- header at top of page -->
         <h2>Welcome to the game of Moksha-Patamu, otherwise known as Snake and Ladders!</h2>
-        
-        <!-- button to toggle rules -->
-        <button class="btn btn-danger mb-1" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            Rules
-        </button>
+
+        <div class="topwrapper">
+            <div class="checkboxcontainer">
+                Dark Mode
+                <input id="toggledark" type="checkbox" aria-label="Checkbox for following text input" onclick="darkMode()">
+            </div>
+            <!-- button to toggle rules -->
+            <button class="btn btn-danger ml-1 mb-1" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Rules
+            </button>
+        </div>
         
         <div class="collapse rules" id="collapseExample">
             <p class="rules">
@@ -48,8 +54,7 @@
             <button class="btn btn-success rolldice mr-1" onclick="normalRoll()">Let's roll!</button>
             <button type="button" class="btn btn-secondary mr-1 autoplay" onclick="autoPlay()" data-toggle="tooltip" data-placement="top" title="To prevent carpal tunnel...stop autoplay with 'Let's roll!' button!">Autoplay</button>
             <button class="btn btn-primary refresh mr-1">New game</button>
-            <button class="btn btn-dark darkmode mr-1">Dark mode</button>
-            <button class="btn btn-light lightmode">Light mode</button>
+        
         </div>
 
         <!-- container to store the screen display information + tile pieces -->

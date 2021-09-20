@@ -14,6 +14,12 @@ body.darkmode{
     font-family: 'Inter', sans-serif;
     text-align: center;
 }
+.topwrapper {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: flex-start;
+}
 /* .infoboard{
     display: flex;
     flex-direction: row;

@@ -23,10 +23,15 @@
         <h2>Welcome to the game of Moksha-Patamu, otherwise known as Snake and Ladders!</h2>
 
         <div class="topwrapper">
-            <div class="checkboxcontainer">
-                Dark Mode
-                <input id="toggledark" type="checkbox" aria-label="Checkbox for dark mode" onclick="darkMode()">
+            <!-- checkbox to toggle dark/light mode -->
+            <!-- refer https://codepen.io/AllThingsSmitty/pen/MmxxOz/ -->
+            <div class="togglecontainer" >
+                <label class="switch" for="checkbox" >
+                  <input type="checkbox" id="checkbox" onclick="darkMode()"/>
+                  <div class="slider round"></div>
+                </label>Dark mode
             </div>
+
             <!-- button to toggle rules -->
             <button class="btn btn-danger ml-4 mb-1" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 Rules

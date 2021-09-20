@@ -215,7 +215,7 @@ const normalRoll = () => {
 // This is for the "Dark mode" checkbox
 // refer https://stackoverflow.com/questions/6358673/javascript-checkbox-onchange
 const darkMode = () => {
-    if (document.getElementById('toggledark').checked) {
+    if (document.getElementById('checkbox').checked) {
         $('body,p')[0].className = "darkmode";
         $('h2')[0].className = "darkmode";
         // change the screen colours displaying the dice value etc

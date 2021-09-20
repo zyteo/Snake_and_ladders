@@ -23,12 +23,17 @@ body.darkmode {
     justify-content: center;
 }
 
+.togglecontainer {
+    display: flex;
+}
+
 .container {
     margin: auto;
     text-align: center;
     display: flex;
     
 }
+
 p.darkmode {
     
     background-color: rgba(0, 0, 0);
@@ -126,3 +131,57 @@ td {
     text-align: center;
     position: absolute;
 }
+
+/* slider for darkmode checkbox */
+.switch {
+    display: flex;
+    height: 34px;
+    position: relative;
+    width: 60px;
+  }
+  
+/* this hides the checkbox */
+.switch input {
+    display:none;
+  }
+  
+  .slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+  }
+  
+  /* colour of the slider after checking */
+  input:checked + .slider {
+    background-color: #66bb6a;
+  }
+  
+  /* translate by x direction of the slider */
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  /* set the slider button to be round */
+  .slider.round:before {
+    border-radius: 50%;
+  }

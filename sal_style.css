@@ -26,6 +26,8 @@ body.darkmode {
 .container {
     margin: auto;
     text-align: center;
+    display: flex;
+    
 }
 p.darkmode {
     
@@ -70,6 +72,8 @@ h2.darkmode {
     /* margin-left: 20.5em; */
 }
 
+/* fixed table, now should work on whatever devices */
+/* refer https://stackoverflow.com/questions/4457506/set-the-table-column-width-constant-regardless-of-the-amount-of-text-in-its-cell */
 table {
     font-family: 'Inter', sans-serif;
     text-align: center;

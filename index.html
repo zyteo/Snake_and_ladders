@@ -54,36 +54,39 @@
             <button class="btn btn-success rolldice mr-1" onclick="normalRoll()">Let's roll!</button>
             <button type="button" class="btn btn-secondary mr-1 autoplay" onclick="autoPlay()" data-toggle="tooltip" data-placement="top" title="To prevent carpal tunnel...stop autoplay with 'Let's roll!' button!">Autoplay</button>
             <button class="btn btn-primary refresh mr-1">New game</button>
+        </div>
+
         
-        </div>
-
-        <!-- container to store the screen display information + tile pieces -->
-        <div class="infocontainer">
-            <div>&#9858 Dice value &#9861
-                <div class="screen badge badge-pill badge-light">&#9858</div>
-            </div>
-            <div>Round Number
-                <div class="screen roundnumber badge badge-pill badge-light">1</div>
-            </div>
-            <div class="p1">Player 1's tile
-                <div class="screen p1tile badge badge-pill badge-light">1</div>
-                <div class="circle1">1</div>
-            </div>
-            <div class="p2">Player 2's tile
-                <div class="screen p2tile badge badge-pill badge-light">1</div>
-                <div class="circle2">2</div>
-            </div>
-        </div>
-
-        <!-- container to contain the board -->
+        <!-- container to contain the board + info-->
         <div class="container">
+            
             <div class="board">
                 <div class="imgoverlay"></div>
                 <table>
                     <!-- use JS to create 10x10 board -->
                 </table>
             </div>
+            
+            <!-- container to store the screen display information + tile pieces -->
+            <div class="infocontainer">
+                <div>&#9858 Dice value &#9861
+                    <div class="screen badge badge-pill badge-light">&#9858</div>
+                </div>
+                <div>Round Number
+                    <div class="screen roundnumber badge badge-pill badge-light">1</div>
+                </div>
+                <div class="p1">Player 1's tile
+                    <div class="screen p1tile badge badge-pill badge-light">1</div>
+                    <div class="circle1">1</div>
+                </div>
+                <div class="p2">Player 2's tile
+                    <div class="screen p2tile badge badge-pill badge-light">1</div>
+                    <div class="circle2">2</div>
+                </div>
+            </div>
         </div>
+        
+        <!-- footer at the end of page -->
         <footer>
             Best viewed on Chrome, Firefox, or Edge.<br>
             Created Sept 2021 by ZY of GA SEI-32.

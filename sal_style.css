@@ -1,41 +1,40 @@
 /* GA SEI 32 Project 1: Game (Moksha Patamu) */
 /* ZY, 10 Sept 2021 */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 body {
     background-color: rgb(183, 228, 165);
     font-family: 'Inter', sans-serif;
     text-align: center;
+    width: fit-content;
 }
-body.darkmode{
+
+body.darkmode {
     background-color: rgba(0, 0, 0);
     color: white;
     font-family: 'Inter', sans-serif;
     text-align: center;
+    width: fit-content;
 }
+
 .topwrapper {
     display: flex;
-    /* flex-wrap: wrap; */
-    justify-content: center;
-    align-items: flex-start;
-}
-/* .infoboard{
-    display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-} */
+    justify-content: center;
+}
+
 .container {
     margin: auto;
     text-align: center;
 }
-p.darkmode{
+p.darkmode {
     
     background-color: rgba(0, 0, 0);
     color: white;
     font-family: 'Inter', sans-serif;
     text-align: center;
 }
+
 h2 {
 color: black(183, 209, 66);
 font-size: 20px;
@@ -43,7 +42,8 @@ font-family: 'Inter', sans-serif;
 background-color: white;
 text-align: center;
 }
-h2.darkmode{
+
+h2.darkmode {
     
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
@@ -54,6 +54,7 @@ h2.darkmode{
 .badge-pill{
     font-size: 24px;
 }
+
 .imgoverlay {
     width: 28.4em;
     height: 28.4em;
@@ -61,21 +62,27 @@ h2.darkmode{
     z-index:10;
     position: absolute;
 }
+
 .board {
     width: 28.4em;
     height: 28.4em;
     /* looks nice on PC but not on mobile devices */
     /* margin-left: 20.5em; */
 }
+
 table {
     font-family: 'Inter', sans-serif;
     text-align: center;
     table-layout: fixed;
     z-index:5;
     position: absolute;
+    width: 450px;
 }
 
 td {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
     background-color:white;
     text-align: left;
 }
@@ -83,7 +90,7 @@ td {
 .square {
     width: 45px;
     height: 45px;
-    /* inline block sets them horinzontally. flex vertical */
+    /* inline block sets them horizontally. flex vertical */
     display: inline-block;
     align-items: center;
     justify-content: center;
@@ -93,15 +100,6 @@ td {
     border: 1px solid rgb(73, 66, 66);
     
 }
-
-.square .dark {
-    /* text color */
-    color: white;
-    text-shadow: 5px 5px 5px rgb(168, 165, 165);
-    border: 1px solid white;
-    
-}
-
 
 .circle1 {
         background: rgb(245, 110, 234);

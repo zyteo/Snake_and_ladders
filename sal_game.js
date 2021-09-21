@@ -26,7 +26,7 @@
 let p1Tile = 1;
 let p2Tile = 1;
 let roundNumber = 1;
-let $audio = $('#audio')[0];
+let $audio = $("#audio")[0];
 let audioPlaying = false;
 // define playGame as global variable for autoplay function
 // refer https://stackoverflow.com/questions/26313066/setinterval-and-clearinterval-inside-of-a-button
@@ -203,17 +203,22 @@ const normalRoll = () => {
 };
 
 // FUNCTION to toggle the music
+// Refer https://stackoverflow.com/questions/27368778/how-to-toggle-audio-play-pause-with-one-button-or-link
 // This is for the music button
 const toggleMusic = () => {
-    audioPlaying ? $audio.pause() : $audio.play();
-  };
+    // use conditional ternary operator here - i.e if audio is playing, then pause audio, otherwise play audio
+    // refer https://stackoverflow.com/questions/30830550/i-have-an-image-i-would-like-to-use-to-control-an-audio-source-i-cant-find-a
+  audioPlaying ? $audio.pause() : $audio.play();
+};
 
+// FUNCTION when audio is playing, set audioPlaying to true and vice versa
+// refer https://www.w3schools.com/jsref/event_onplaying.asp
 $audio.onplaying = () => {
-    audioPlaying = true;
-}
+  audioPlaying = true;
+};
 $audio.onpause = () => {
-    audioPlaying = false;
-}
+  audioPlaying = false;
+};
 
 // FUNCTION to set dark mode
 // Function checks if checkbox is checked, if yes then enable dark mode, otherwise is light mode
@@ -234,10 +239,9 @@ const darkMode = () => {
 
 // jquery/js event listeners
 $(() => {
-    // once DOM loaded, append the pieces to the tile
-    $("#" + `${p1Tile}`).append($(".circle1"));
-    $("#" + `${p2Tile}`).append($(".circle2"));
-
+  // once DOM loaded, append the pieces to the tile
+  $("#" + `${p1Tile}`).append($(".circle1"));
+  $("#" + `${p2Tile}`).append($(".circle2"));
 
   // on click, reset game by refreshing page
   $(".refresh").on("click", () => {
@@ -252,6 +256,5 @@ $(() => {
     // $(".p2tile")[0].textContent = p2Tile;
     // $("#" + `${p1Tile}`).append($(".circle1"));
     // $("#" + `${p2Tile}`).append($(".circle2"));
-    
   });
 });

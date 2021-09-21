@@ -26,6 +26,8 @@
 let p1Tile = 1;
 let p2Tile = 1;
 let roundNumber = 1;
+let $audio = $('#audio')[0];
+let audioPlaying = false;
 // define playGame as global variable for autoplay function
 // refer https://stackoverflow.com/questions/26313066/setinterval-and-clearinterval-inside-of-a-button
 let playGame;
@@ -199,6 +201,19 @@ const normalRoll = () => {
   clearInterval(playGame);
   progressGame();
 };
+
+// FUNCTION to toggle the music
+// This is for the music button
+const toggleMusic = () => {
+    audioPlaying ? $audio.pause() : $audio.play();
+  };
+
+$audio.onplaying = () => {
+    audioPlaying = true;
+}
+$audio.onpause = () => {
+    audioPlaying = false;
+}
 
 // FUNCTION to set dark mode
 // Function checks if checkbox is checked, if yes then enable dark mode, otherwise is light mode

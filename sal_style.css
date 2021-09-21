@@ -114,7 +114,7 @@ td {
         background: rgb(245, 110, 234);
         text-shadow: 5px 5px 5px rgb(168, 165, 165);
         border-radius: 50%;
-        z-index: 20;
+        z-index: 100;
         width: 21px;
         height: 21px;    
         text-align: center;
@@ -125,7 +125,7 @@ td {
     background: cyan;
     text-shadow: 5px 5px 5px rgb(168, 165, 165);
     border-radius: 50%;    
-    z-index: 20;
+    z-index: 100;
     width: 21px;
     height: 21px;
     text-align: center;

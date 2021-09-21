@@ -219,9 +219,24 @@ const darkMode = () => {
 
 // jquery/js event listeners
 $(() => {
+    // once DOM loaded, append the pieces to the tile
+    $("#" + `${p1Tile}`).append($(".circle1"));
+    $("#" + `${p2Tile}`).append($(".circle2"));
+
+
   // on click, reset game by refreshing page
   $(".refresh").on("click", () => {
     window.location.reload();
+    // clearInterval(playGame)
+    // let p1Tile = 1;
+    // let p2Tile = 1;
+    // let roundNumber = 1;
+    // $(".screen")[0].innerHTML = `&#9858`;
+    // $(".roundnumber")[0].textContent = roundNumber;
+    // $(".p1tile")[0].textContent = p1Tile;
+    // $(".p2tile")[0].textContent = p2Tile;
+    // $("#" + `${p1Tile}`).append($(".circle1"));
+    // $("#" + `${p2Tile}`).append($(".circle2"));
     
   });
 });

@@ -31,4 +31,5 @@ ERROR : towards the end, sometimes got NAN, was wondering why, <-- was also a hi
 18 sept - Modified some css and html, attempting to work on aesthetics/layout + autoplay function so players don't have to keep clicking. Played flexbox froggy to familiarise with flexbox properties.\
 19 sept - neaten js code, also added autoplay function for game, to stop autoplay just press "let's roll" and roll manually.\
 20 sept - learning css stuff, further neaten code. Added some more info to word doc + html. Also set dark/light mode as a checkbox, thus removing 2 buttons, easier for players. Fixed table setting. Now no matter how zoomed in/using other devices, the snake and ladder board should not be broken. Got the checkbox into a toggle switch.\
-21 sept - changed tile pieces positioning, should now not overlap when they are both on the same tile. Added music toggle to game. Changed some code based on soft launch presentation comments. Added github link to footer
+21 sept - changed tile pieces positioning, should now not overlap when they are both on the same tile. Added music toggle to game. Changed some code based on soft launch presentation comments. Added github link to footer\
+22 sept - added prompt for item array for alert message at endgame

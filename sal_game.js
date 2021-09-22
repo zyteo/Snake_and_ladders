@@ -24,6 +24,7 @@
 
 // define variables for game start
 let itemsArray = [];
+let winnerAndLoser = [];
 let p1Tile = 1;
 let p2Tile = 1;
 let roundNumber = 1;
@@ -32,6 +33,8 @@ let audioPlaying = false;
 // define playGame as global variable for autoplay function
 // refer https://stackoverflow.com/questions/26313066/setinterval-and-clearinterval-inside-of-a-button
 let playGame;
+let player1;
+let player2;
 
 // set the value of the last tile and condition where piece is nearing the last tile
 const lastTile = 100;
@@ -92,7 +95,6 @@ const moveTileEnding = (currentTile) => {
   }
   // If land nicely on last tile, 100.
   else if (tileAfterRoll === lastTile) {
-    alert(`Loser should treat winner ${pickItem()}! Select "New game" to start again!`);
     clearInterval(playGame);
     return tileAfterRoll;
   }
@@ -155,6 +157,9 @@ const progressGame = () => {
       $(".p1tile")[0].textContent = p1Tile;
       // update tile piece
       $("#" + `${p1Tile}`).append($(".circle1"));
+      if (p1Tile === lastTile) {
+        alertEndGame();
+      }
     }
     // If tile less than 94, NORMAL
     else {
@@ -177,6 +182,9 @@ const progressGame = () => {
       console.log("endgame p2", p2Tile);
       $(".p2tile")[0].textContent = p2Tile;
       $("#" + `${p2Tile}`).append($(".circle2"));
+      if (p2Tile === lastTile) {
+        alertEndGame();
+      }
     }
     // If tile less than 94, NORMAL
     else {
@@ -240,18 +248,41 @@ const darkMode = () => {
   }
 };
 
-// FUNCTION to prompt user to key in items into items array
+// FUNCTION to prompt user to key in items into items array, and the player names
 const checkItems = () => {
   if (itemsArray.length === 0){
     itemsArray = prompt("Items that loser should treat winner (separate with comma!) - 1 item will be randomly picked.", "Ice cream,Chicken rice,Movie,Drink").split(",");
+    player1 = prompt("Player 1's name/nickname?","Player 1");
+    player2 = prompt("Player 2's name/nickname?","Player 2");
+    // update player names on screen
+    $('.p1name')[0].textContent = `${player1}'s tile (P1)`;
+    $('.p2name')[0].textContent = `${player2}'s tile (P2)`;
   }
 }
 
-// FUNCTION to randomly pick 1 item from items array
+// FUNCTION to find the winner/loser and update winnerAndLoser array respectively for alert message
+const findWinnerAndLoser = () => {
+  // if p1 is winner
+  if (parseInt($('.p1tile')[0].textContent) === lastTile){
+    winnerAndLoser.push(player1,player2);
+  }
+  else {
+    winnerAndLoser.push(player2,player1);
+  }
+  return winnerAndLoser;
+}
+
+// FUNCTION to randomly pick 1 item from items array once there is a winner
 const pickItem = () => {
   let numberOfItems = itemsArray.length;
   let randomItemIndex = Math.floor(Math.random() * numberOfItems);
   return itemsArray[randomItemIndex];
+}
+
+// FUNCTION for alert message at end game
+const alertEndGame = () => {
+  findWinnerAndLoser();
+  alert(`${winnerAndLoser[1]} should treat ${winnerAndLoser[0]} ${pickItem()}! Select "New game" to start again!`);
 }
 
 // jquery/js event listeners

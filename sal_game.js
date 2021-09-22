@@ -23,6 +23,7 @@
 /////////////////////////////////// END OF PLANNING ////////////////////////////////////////////////
 
 // define variables for game start
+let itemsArray = [];
 let p1Tile = 1;
 let p2Tile = 1;
 let roundNumber = 1;
@@ -91,7 +92,7 @@ const moveTileEnding = (currentTile) => {
   }
   // If land nicely on last tile, 100.
   else if (tileAfterRoll === lastTile) {
-    alert('A player has reached 100! Select "New game" to start again!');
+    alert(`Loser should treat winner ${pickItem()}! Select "New game" to start again!`);
     clearInterval(playGame);
     return tileAfterRoll;
   }
@@ -191,6 +192,7 @@ const progressGame = () => {
 // Function uses the built-in setinterval function to run the progressGame function above, interval of 1sec.
 // This is for the "Autoplay" button
 const autoPlay = () => {
+  checkItems();
   playGame = setInterval(progressGame, 1000);
 };
 
@@ -199,6 +201,7 @@ const autoPlay = () => {
 // This is for the "Let's roll!" button
 const normalRoll = () => {
   clearInterval(playGame);
+  checkItems();
   progressGame();
 };
 
@@ -236,6 +239,20 @@ const darkMode = () => {
     $(".badge-dark").addClass("badge-light").removeClass("badge-dark");
   }
 };
+
+// FUNCTION to prompt user to key in items into items array
+const checkItems = () => {
+  if (itemsArray.length === 0){
+    itemsArray = prompt("Items that loser should treat winner (separate with comma!) - 1 item will be randomly picked.", "Ice cream,Chicken rice,Movie,Drink").split(",");
+  }
+}
+
+// FUNCTION to randomly pick 1 item from items array
+const pickItem = () => {
+  let numberOfItems = itemsArray.length;
+  let randomItemIndex = Math.floor(Math.random() * numberOfItems);
+  return itemsArray[randomItemIndex];
+}
 
 // jquery/js event listeners
 $(() => {

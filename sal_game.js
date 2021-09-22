@@ -22,19 +22,14 @@
 // If round number odd, do P1. If even, work on P2
 /////////////////////////////////// END OF PLANNING ////////////////////////////////////////////////
 
-// define variables for game start
-let itemsArray = [];
-let winnerAndLoser = [];
-let p1Tile = 1;
-let p2Tile = 1;
-let roundNumber = 1;
+// define global variables for game
+let itemsArray = winnerAndLoser = [];
+let p1Tile = p2Tile = roundNumber = 1;
 let $audio = $("#audio")[0];
 let audioPlaying = false;
 // define playGame as global variable for autoplay function
 // refer https://stackoverflow.com/questions/26313066/setinterval-and-clearinterval-inside-of-a-button
-let playGame;
-let player1;
-let player2;
+let playGame, player1, player2;
 
 // set the value of the last tile and condition where piece is nearing the last tile
 const lastTile = 100;

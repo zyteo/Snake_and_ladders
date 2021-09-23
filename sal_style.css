@@ -1,188 +1,198 @@
 /* GA SEI 32 Project 1: Game (Moksha Patamu) */
 /* ZY, 10 Sept 2021 */
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+/* cursor from https://www.cursors-4u.com/cursor/2005/08/05/nat43.html */
+html {
+  cursor: url(https://cur.cursors-4u.net/nature/nat-1/nat43.ani),
+    url(https://cur.cursors-4u.net/nature/nat-1/nat43.png), auto !important;
+}
 
 body {
-    background-color: rgb(183, 228, 165);
-    font-family: 'Inter', sans-serif;
-    text-align: center;
-    width: fit-content;
+  background-color: rgb(183, 228, 165);
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  width: auto;
 }
 
 body.darkmode {
-    background-color: rgba(0, 0, 0);
-    color: white;
-    font-family: 'Inter', sans-serif;
-    text-align: center;
-    width: fit-content;
+  background-color: rgba(0, 0, 0);
+  color: white;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  width: auto;
 }
 
 .topwrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .togglecontainer {
-    display: flex;
+  display: flex;
+}
+
+.buttoncontainer {
+  margin-bottom: 5px;
 }
 
 .container {
-    margin: auto;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.infocontainer {
+  width: 220px;
 }
 
 p.darkmode {
-    
-    background-color: rgba(0, 0, 0);
-    color: white;
-    font-family: 'Inter', sans-serif;
-    text-align: center;
+  background-color: rgba(0, 0, 0);
+  color: white;
+  font-family: "Inter", sans-serif;
+  text-align: center;
 }
 
 h2 {
-color: black(183, 209, 66);
-font-size: 20px;
-font-family: 'Inter', sans-serif;
-background-color: white;
-text-align: center;
+  color: black(183, 209, 66);
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  background-color: white;
+  text-align: center;
 }
 
 h2.darkmode {
-    
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    font-family: 'Inter', sans-serif;
-    text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-family: "Inter", sans-serif;
+  text-align: center;
 }
 
-.badge-pill{
-    font-size: 24px;
+.badge-pill {
+  font-size: 24px;
 }
 
 .imgoverlay {
-    width: 28.4em;
-    height: 28.4em;
-    background-image: url('Images/images/Board_image.png');
-    z-index:10;
-    position: absolute;
+  width: 28.4em;
+  height: 28.4em;
+  background-image: url("Images/images/Board_image.png");
+  z-index: 10;
+  position: absolute;
 }
 
 .board {
-    width: 28.4em;
-    height: 28.4em;
-    /* looks nice on PC but not on mobile devices */
-    /* margin-left: 20.5em; */
+  width: 28.4em;
+  height: 28.4em;
 }
 
 /* fixed table, now should work on whatever devices */
 /* refer https://stackoverflow.com/questions/4457506/set-the-table-column-width-constant-regardless-of-the-amount-of-text-in-its-cell */
 table {
-    font-family: 'Inter', sans-serif;
-    text-align: center;
-    table-layout: fixed;
-    z-index:5;
-    position: absolute;
-    width: 450px;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  table-layout: fixed;
+  /* z-index set to auto since it is parent element of tile pieces, want tile pieces to be above S&L */
+  z-index: auto;
+  position: absolute;
+  width: 450px;
 }
 
 td {
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
-    background-color:white;
-    text-align: left;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  text-align: left;
 }
 
 .square {
-    width: 45px;
-    height: 45px;
-    /* inline block sets them horizontally. flex vertical */
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
-    /* text color */
-    color: black;
-    text-shadow: 5px 5px 5px rgb(168, 165, 165);
-    border: 1px solid rgb(73, 66, 66);
-    
+  width: 45px;
+  height: 45px;
+  /* inline block sets them horizontally. flex vertical */
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  /* text color */
+  color: black;
+  text-shadow: 5px 5px 5px rgb(168, 165, 165);
+  border: 1px solid rgb(73, 66, 66);
 }
 
 .circle1 {
-        background: rgb(245, 110, 234);
-        text-shadow: 5px 5px 5px rgb(168, 165, 165);
-        border-radius: 50%;
-        z-index: 100;
-        width: 21px;
-        height: 21px;    
-        text-align: center;
-        position: relative;
+  background: rgb(245, 110, 234);
+  text-shadow: 5px 5px 5px rgb(168, 165, 165);
+  border-radius: 50%;
+  z-index: 100;
+  width: 21px;
+  height: 21px;
+  text-align: center;
+  position: relative;
 }
 
 .circle2 {
-    background: cyan;
-    text-shadow: 5px 5px 5px rgb(168, 165, 165);
-    border-radius: 50%;    
-    z-index: 100;
-    width: 21px;
-    height: 21px;
-    text-align: center;
-    position: relative;
+  background: cyan;
+  text-shadow: 5px 5px 5px rgb(168, 165, 165);
+  border-radius: 50%;
+  z-index: 100;
+  width: 21px;
+  height: 21px;
+  text-align: center;
+  position: relative;
 }
 
 /* slider for darkmode checkbox */
 .switch {
-    display: flex;
-    height: 34px;
-    position: relative;
-    width: 60px;
-  }
-  
+  display: flex;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
 /* this hides the checkbox */
 .switch input {
-    display:none;
-  }
-  
-  .slider {
-    background-color: #ccc;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    background-color: #fff;
-    bottom: 4px;
-    content: "";
-    height: 26px;
-    left: 4px;
-    position: absolute;
-    transition: .4s;
-    width: 26px;
-  }
-  
-  /* colour of the slider after checking */
-  input:checked + .slider {
-    background-color: #66bb6a;
-  }
-  
-  /* translate by x direction of the slider */
-  input:checked + .slider:before {
-    transform: translateX(26px);
-  }
-  
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  /* set the slider button to be round */
-  .slider.round:before {
-    border-radius: 50%;
-  }
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+/* colour of the slider after checking */
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+
+/* translate by x direction of the slider */
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+/* set the slider button to be round */
+.slider.round:before {
+  border-radius: 50%;
+}

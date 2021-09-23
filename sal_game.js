@@ -23,8 +23,8 @@
 /////////////////////////////////// END OF PLANNING ////////////////////////////////////////////////
 
 // define global variables for game
-let itemsArray = winnerAndLoser = [];
-let p1Tile = p2Tile = roundNumber = 1;
+let itemsArray = (winnerAndLoser = []);
+let p1Tile = (p2Tile = roundNumber = 1);
 let $audio = $("#audio")[0];
 let audioPlaying = false;
 // define playGame as global variable for autoplay function
@@ -208,12 +208,25 @@ const normalRoll = () => {
   progressGame();
 };
 
+// Allowing users to press spacebar for the "Let's roll!" button
+// Allowing users to press A for the "Autoplay" button
+$(document)[0].onkeydown = (event) => {
+  if (event.code === "KeyR") {
+    clearInterval(playGame);
+    checkItems();
+    progressGame();
+  } else if (event.code === "KeyA") {
+    checkItems();
+    playGame = setInterval(progressGame, 1000);
+  }
+};
+
 // FUNCTION to toggle the music
 // Refer https://stackoverflow.com/questions/27368778/how-to-toggle-audio-play-pause-with-one-button-or-link
 // This is for the music button
 const toggleMusic = () => {
-    // use conditional ternary operator here - i.e if audio is playing, then pause audio, otherwise play audio
-    // refer https://stackoverflow.com/questions/30830550/i-have-an-image-i-would-like-to-use-to-control-an-audio-source-i-cant-find-a
+  // use conditional ternary operator here - i.e if audio is playing, then pause audio, otherwise play audio
+  // refer https://stackoverflow.com/questions/30830550/i-have-an-image-i-would-like-to-use-to-control-an-audio-source-i-cant-find-a
   audioPlaying ? $audio.pause() : $audio.play();
 };
 
@@ -245,40 +258,46 @@ const darkMode = () => {
 
 // FUNCTION to prompt user to key in items into items array, and the player names
 const checkItems = () => {
-  if (itemsArray.length === 0){
-    itemsArray = prompt("Items that loser should treat winner (separate with comma!) - 1 item will be randomly picked.", "Ice cream,Chicken rice,Movie,Drink").split(",");
-    player1 = prompt("Player 1's name/nickname?","Player 1");
-    player2 = prompt("Player 2's name/nickname?","Player 2");
+  if (itemsArray.length === 0) {
+    itemsArray = prompt(
+      "Items that loser should treat winner (separate with comma!) - 1 item will be randomly picked.",
+      "Ice cream,Chicken rice,Movie,Drink"
+    ).split(",");
+    player1 = prompt("Player 1's name/nickname?", "Player 1");
+    player2 = prompt("Player 2's name/nickname?", "Player 2");
     // update player names on screen
-    $('.p1name')[0].textContent = `${player1}'s tile (P1)`;
-    $('.p2name')[0].textContent = `${player2}'s tile (P2)`;
+    $(".p1name")[0].textContent = `${player1}'s tile (P1)`;
+    $(".p2name")[0].textContent = `${player2}'s tile (P2)`;
   }
-}
+};
 
 // FUNCTION to find the winner/loser and update winnerAndLoser array respectively for alert message
 const findWinnerAndLoser = () => {
   // if p1 is winner
-  if (parseInt($('.p1tile')[0].textContent) === lastTile){
-    winnerAndLoser.push(player1,player2);
-  }
-  else {
-    winnerAndLoser.push(player2,player1);
+  if (parseInt($(".p1tile")[0].textContent) === lastTile) {
+    winnerAndLoser.push(player1, player2);
+  } else {
+    winnerAndLoser.push(player2, player1);
   }
   return winnerAndLoser;
-}
+};
 
 // FUNCTION to randomly pick 1 item from items array once there is a winner
 const pickItem = () => {
   let numberOfItems = itemsArray.length;
   let randomItemIndex = Math.floor(Math.random() * numberOfItems);
   return itemsArray[randomItemIndex];
-}
+};
 
 // FUNCTION for alert message at end game
 const alertEndGame = () => {
   findWinnerAndLoser();
-  alert(`${winnerAndLoser[1]} should treat ${winnerAndLoser[0]} ${pickItem()}! Select "New game" to start again!`);
-}
+  alert(
+    `${winnerAndLoser[1]} should treat ${
+      winnerAndLoser[0]
+    } ${pickItem()}! Select "New game" to start again!`
+  );
+};
 
 // jquery/js event listeners
 $(() => {
@@ -286,18 +305,18 @@ $(() => {
   $("#" + `${p1Tile}`).append($(".circle1"));
   $("#" + `${p2Tile}`).append($(".circle2"));
 
-  // on click, reset game by refreshing page
-  $(".refresh").on("click", () => {
-    window.location.reload();
-    // clearInterval(playGame)
-    // let p1Tile = 1;
-    // let p2Tile = 1;
-    // let roundNumber = 1;
-    // $(".screen")[0].innerHTML = `&#9858`;
-    // $(".roundnumber")[0].textContent = roundNumber;
-    // $(".p1tile")[0].textContent = p1Tile;
-    // $(".p2tile")[0].textContent = p2Tile;
-    // $("#" + `${p1Tile}`).append($(".circle1"));
-    // $("#" + `${p2Tile}`).append($(".circle2"));
+  // on click, reset game
+  $(".newgame").on("click", () => {
+    // window.location.reload();
+    clearInterval(playGame);
+    p1Tile = 1;
+    p2Tile = 1;
+    roundNumber = 1;
+    $(".screen")[0].innerHTML = `&#9858`;
+    $(".roundnumber")[0].textContent = roundNumber;
+    $(".p1tile")[0].textContent = p1Tile;
+    $(".p2tile")[0].textContent = p2Tile;
+    $("#" + `${p1Tile}`).append($(".circle1"));
+    $("#" + `${p2Tile}`).append($(".circle2"));
   });
 });

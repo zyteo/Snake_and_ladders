@@ -51,16 +51,17 @@
                 So if the player rolls a higher number than needed to land exactly on 100, their piece does not move and remains there until their next turn.<br>
 
                 How to play:<br>
-                Manually press the "Let's roll" button to roll the dice. Alternatively, press the "Autoplay" button if you're feeling lazy! <br>
-                To stop Autoplay, just press "Let's roll" again to revert to manually clicking.
+                Press "Let's roll" / "R" to roll the dice. Alternatively, press "Autoplay" / "A" if you're feeling lazy! <br>
+                To stop Autoplay, just press "Let's roll" again. <br>
+                Refresh the page after a game to enter a new set of items / player names.
             </p>
         </div>
         
         <!-- button container for all the buttons -->
         <div class="buttoncontainer">
-            <button class="btn btn-success rolldice mr-1" onclick="normalRoll()">Let's roll!</button>
-            <button type="button" class="btn btn-secondary mr-1 autoplay" onclick="autoPlay()" data-toggle="tooltip" data-placement="top" title="To prevent carpal tunnel...stop autoplay with 'Let's roll!' button!">Autoplay</button>
-            <button class="btn btn-primary refresh mr-1">New game</button>
+            <button class="btn btn-success rolldice mr-1" onclick="normalRoll()">Let's roll! (R)</button>
+            <button type="button" class="btn btn-secondary mr-1 autoplay" onclick="autoPlay()" data-toggle="tooltip" data-placement="top" title="To prevent carpal tunnel...stop autoplay with 'Let's roll!' button!">Autoplay (A)</button>
+            <button class="btn btn-primary newgame mr-1">New game</button>
             <!-- music taken from https://freemusicarchive.org/  -->
             <button type="button" class="btn btn-warning mr-1" onclick="toggleMusic()" data-toggle="tooltip" data-placement="top" title="Toggle music on/off">&#9835;</button>
             <audio id="audio" src="music/Serge Quadrado - Web Building.mp3"></audio>
@@ -108,4 +109,4 @@
         <script src="sal_game.js"></script>
     </body>
     
-    </html>
+</html>

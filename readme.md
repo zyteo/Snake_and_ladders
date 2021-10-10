@@ -34,3 +34,4 @@ ERROR : towards the end, sometimes got NAN, was wondering why, <-- was also a hi
 21 sept - changed tile pieces positioning, should now not overlap when they are both on the same tile. Added music toggle to game. Changed some code based on soft launch presentation comments. Added github link to footer\
 22 sept - added prompt for item array for alert message at endgame. Also added prompt to take in player names\
 23 sept - minor CSS edits, managed to center board+screen and adjusted width/margins to make things look better, and tile pieces are now above the snakes/ladders. Changed to snake cursor. Also adjusted "new game" button which no longer refreshes page. Added keypress events for "Let's roll" & "Autoplay" buttons. Added post-mortem.\
+10 Oct - Adjusted tile pieces such that when both are on the same tile, they are within the tile box. Previously one tile would be below another, making it seem like they are on different tiles.

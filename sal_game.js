@@ -27,6 +27,7 @@ let itemsArray = (winnerAndLoser = []);
 let p1Tile = (p2Tile = roundNumber = 1);
 let $audio = $("#audio")[0];
 let audioPlaying = false;
+let autoPlaying = false;
 // define playGame as global variable for autoplay function
 // refer https://stackoverflow.com/questions/26313066/setinterval-and-clearinterval-inside-of-a-button
 let playGame, player1, player2;
@@ -91,6 +92,7 @@ const moveTileEnding = (currentTile) => {
   // If land nicely on last tile, 100.
   else if (tileAfterRoll === lastTile) {
     clearInterval(playGame);
+    autoPlaying = false;
     return tileAfterRoll;
   }
   // if goes beyond last tile, remain in original position
@@ -196,7 +198,10 @@ const progressGame = () => {
 // This is for the "Autoplay" button
 const autoPlay = () => {
   checkItems();
-  playGame = setInterval(progressGame, 1000);
+  if(autoPlaying === false) {
+    playGame = setInterval(progressGame,1000);
+    autoPlaying = true;
+}
 };
 
 // FUNCTION to progress the game
@@ -204,6 +209,7 @@ const autoPlay = () => {
 // This is for the "Let's roll!" button
 const normalRoll = () => {
   clearInterval(playGame);
+  autoPlaying = false;
   checkItems();
   progressGame();
 };
@@ -213,11 +219,15 @@ const normalRoll = () => {
 $(document)[0].onkeydown = (event) => {
   if (event.code === "KeyR") {
     clearInterval(playGame);
+    autoPlaying = false;
     checkItems();
     progressGame();
   } else if (event.code === "KeyA") {
     checkItems();
-    playGame = setInterval(progressGame, 1000);
+    if(autoPlaying === false) {
+      playGame = setInterval(progressGame,1000);
+      autoPlaying = true;
+  }
   }
 };
 
@@ -309,6 +319,7 @@ $(() => {
   $(".newgame").on("click", () => {
     // window.location.reload();
     clearInterval(playGame);
+    autoPlaying = false;
     p1Tile = 1;
     p2Tile = 1;
     roundNumber = 1;

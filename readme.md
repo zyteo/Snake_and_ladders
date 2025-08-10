@@ -35,4 +35,5 @@ ERROR : towards the end, sometimes got NAN, was wondering why, <-- was also a hi
 22 sept - added prompt for item array for alert message at endgame. Also added prompt to take in player names\
 23 sept - minor CSS edits, managed to center board+screen and adjusted width/margins to make things look better, and tile pieces are now above the snakes/ladders. Changed to snake cursor. Also adjusted "new game" button which no longer refreshes page. Added keypress events for "Let's roll" & "Autoplay" buttons. Added post-mortem.\
 10 Oct - Adjusted tile pieces such that when both are on the same tile, they are within the tile box. Previously one tile would be below another, making it seem like they are on different tiles.\
-6 Dec - Manually added state for autoplay so that when user spam clicks autoplay, there will not be multiple intervals.
+6 Dec - Manually added state for autoplay so that when user spam clicks autoplay, there will not be multiple intervals.\
+8 Aug 2025 - Upgraded node version on vercel

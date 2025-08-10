@@ -75,7 +75,7 @@ Previously one tile would be below another, making it seem like they are on diff
 
 28 Jun 2023 - Adjusted readme file for readability
 
-8 Aug 2025 - Upgraded node version on vercel
+10 Aug 2025 - Upgraded node version on vercel
 ```
 
 
